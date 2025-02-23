@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F1F0"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="200dp"
+        android:background="#D58F6B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="289dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="100dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="user persona A"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_a" />
+
+        <Button
+            android:id="@+id/moreInfo"
+            android:layout_width="162dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center|end"
+            android:layout_marginTop="140dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="#F5F3EA"
+            android:text="More Info"
+            android:textColor="#D58F6B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="30dp" />
+
+        <TextView
+            android:id="@+id/name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="120dp"
+            android:text="Maayan Levy"
+            android:textColor="#F5F3EA"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/place1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="20sp"
+            android:layout_marginBottom="100sp"
+            android:text="Netanya"
+            android:textColor="#F5F3EA"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fee1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="20sp"
+            android:layout_marginBottom="80sp"
+            android:text="₪150/hour"
+            android:textColor="#F5F3EA"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/stars5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/stars5" />
+
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/yes"
+        android:layout_width="105dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="84dp"
+        android:background="#F8F1F0"
+        android:contentDescription="yes button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toEndOf="@+id/no"
+        app:srcCompat="@drawable/yes"
+        app:tint="#E79C9C" />
+
+    <ImageButton
+        android:id="@+id/no"
+        android:layout_width="99dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="84dp"
+        android:background="#F8F1F0"
+        android:contentDescription="no button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="#A28181" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="cursive"
+        android:text="Orderly Home"
+        android:textColor="#6499A7"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/chat"
+        android:layout_width="57dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="chat button"
+        android:scaleType="fitCenter"
+        app:tint="#6499a7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/chat" />
+
+    <ImageButton
+        android:id="@+id/profile"
+        android:layout_width="63dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="profile button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homebutton"
+        app:layout_constraintStart_toEndOf="@+id/chat"
+        app:srcCompat="@drawable/profile"
+        app:tint="#6499a7" />
+
+    <ImageButton
+        android:id="@+id/homebutton"
+        android:layout_width="85dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="home screen button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/home"
+        app:tint="#6499a7" />
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="71dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="menu barr button"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu"
+        app:tint="#6499a7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

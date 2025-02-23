@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F1F0"
+    tools:context=".Screen2_MoreInfo">
+
+    <!-- TOP BAR BUTTONS -->
+    <ImageButton
+        android:id="@+id/menu2"
+        android:layout_width="71dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="menu bar button"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu"
+        app:tint="#6499a7" />
+
+    <TextView
+        android:id="@+id/app_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="cursive"
+        android:text="Orderly Home"
+        android:textColor="#6499A7"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- MAIN ORGANIZER INFO (Name, Place, Fee, etc.) -->
+
+    <!-- Organizer Display Picture -->
+
+    <!-- DESCRIPTION FRAME / TEXT -->
+
+    <TextView
+        android:id="@+id/name_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="188dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Mayaan Levy"
+        android:textColor="#6499A7"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name2" />
+
+    <TextView
+        android:id="@+id/place_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Netanya"
+        android:textColor="#6499A7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_a" />
+
+    <TextView
+        android:id="@+id/fee_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="₪150/hour"
+        android:textColor="#6499A7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place_a" />
+
+    <TextView
+        android:id="@+id/age_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="54"
+        android:textColor="#6499A7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fee_a" />
+
+    <ImageView
+        android:id="@+id/displaypicture_a"
+        android:layout_width="186dp"
+        android:layout_height="171dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name2"
+        app:srcCompat="@drawable/maayanimage" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="56dp"
+        android:fontFamily="sans-serif"
+        android:text="Description:"
+        android:textColor="#D58F6B"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="193dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="5dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/details_a"
+            android:layout_width="176dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Hello! I am Maayan, i’m a pensioner. When i’m not with my  grandchildren i like to tidy things up around the house, it relaxes me.    "
+            android:textColor="#D58F6B"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/portfolio1"
+        android:layout_width="181dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="75dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fee_a">
+
+        <ImageView
+            android:id="@+id/portfoliopic1"
+            android:layout_width="182dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/banda0" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- REVIEWS RECYCLERVIEW BELOW THE CARDVIEWS -->
+
+    <!-- BOTTOM BUTTONS -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/portfolio2"
+        android:layout_width="181dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message">
+
+        <ImageView
+            android:id="@+id/portfoliopic2"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/banda2" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reviewsRecyclerView"
+        android:layout_width="384dp"
+        android:layout_height="166dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/homebutton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portfolio1"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <ImageButton
+        android:id="@+id/chat2"
+        android:layout_width="57dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="chat button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/profile2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/chat"
+        app:tint="#6499a7" />
+
+    <ImageButton
+        android:id="@+id/profile2"
+        android:layout_width="63dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="profile button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homebutton2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/chat2"
+        app:srcCompat="@drawable/profile"
+        app:tint="#6499a7" />
+
+    <ImageButton
+        android:id="@+id/homebutton2"
+        android:layout_width="85dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="home screen button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/home"
+        app:tint="#6499a7" />
+
+    <Button
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Message"
+        android:textColor="#D58F6B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:text="Portfolio:"
+        android:textColor="#D58F6B"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_a" />
+
+    <TextView
+        android:id="@+id/reviews_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:text="Reviews:"
+        android:textColor="#D58F6B"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/portfolio1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
