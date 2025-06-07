@@ -61,7 +61,7 @@ public class Screen2_MoreInfo extends AppCompatActivity {
 
         // Setting up the adapter for the RecyclerView with the reviews data
         // The reviews are fetched from the selectedOrganizer object
-        ReviewAdapter adapter = new ReviewAdapter(selectedOrganizer.getReview());
+        ReviewAdapter adapter = new ReviewAdapter();
         reviewsRecyclerView.setAdapter(adapter); // Attaching the adapter to the RecyclerView
     }
 }
