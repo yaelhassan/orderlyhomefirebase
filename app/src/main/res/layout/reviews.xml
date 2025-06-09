@@ -29,7 +29,7 @@
                 android:id="@+id/reviewer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="16dp"
                 android:text="Noa"
                 android:textColor="#D58F6B"
@@ -51,16 +51,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/n_logo"
-                android:layout_width="53dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/n_logo" />
 
             <TextView
                 android:id="@+id/reviewstars1"

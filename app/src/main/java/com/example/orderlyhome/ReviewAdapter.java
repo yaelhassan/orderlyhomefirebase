@@ -48,24 +48,24 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewViewHolder> {
                 }
             }
         });
-//        db.collection("Reviews").addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-//                        reviewsList.clear();
-//                        for (QueryDocumentSnapshot doc : value) {
-//                            Long longLogo = doc.getLong("Logo");
-//                            int logoRes = (longLogo != null) ? longLogo.intValue() : 0;
-//                            String stars        = doc.getString("Reviewstars");
-//                            String reviewerName = doc.getString("Reviewer");
-//                            String reviewText   = doc.getString("Review");
-//                            String reviewId     = doc.getString("ID");
-//
-//                            reviews r = new reviews(stars, reviewerName, reviewText, reviewId);
-//                            reviewsList.add(r);
-//                        }
-//                        notifyDataSetChanged();
-//                    }
-//                });
+        db.collection("Reviews").addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        reviewsList.clear();
+                        for (QueryDocumentSnapshot doc : value) {
+                            //Long longLogo = doc.getLong("Logo");
+                           // int logoRes = (longLogo != null) ? longLogo.intValue() : 0;
+                            String stars        = doc.getString("Reviewstars");
+                            String reviewerName = doc.getString("Reviewer");
+                            String reviewText   = doc.getString("Review");
+                            String reviewId     = doc.getString("ID");
+
+                            reviews r = new reviews(stars, reviewerName, reviewText, reviewId);
+                            reviewsList.add(r);
+                        }
+                        notifyDataSetChanged();
+                    }
+                });
     }
 
     // This method is called when a new ViewHolder is needed
