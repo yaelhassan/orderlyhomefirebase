@@ -1,3 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OrderlyHome</string>
+    <string name="app_name">Orderly Home</string>
+    <string name="book_with_annabel">Book with Annabel</string>
+    <string name="book_with_mayaan">Book with Mayaan</string>
+    <string name="select_availability">Select desired availability:</string>
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="CONTINUE_TO_PAYMENT">Continue to Payment</string>
+    <string name="back_arrow">Back</string>
 </resources>

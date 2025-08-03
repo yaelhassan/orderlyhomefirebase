@@ -2,66 +2,102 @@ package com.example.orderlyhome;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Screen2_MoreInfo extends AppCompatActivity {
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-    // onCreate method - where the activity starts executing.
+public class Screen2_MoreInfo extends AppCompatActivity {
+    private ReviewAdapter adapter;
+    private RecyclerView rv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_screen2_more_info);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // 1) Read the Organizer we were given
+        final Organizer selectedOrganizer =
+                (Organizer) getIntent().getSerializableExtra("selectedOrganizer");
+        final String organizerId = selectedOrganizer.getName();
+
+        // 2) Populate the profile views
+        ((TextView) findViewById(R.id.name_a))
+                .setText(selectedOrganizer.getName());
+        ((TextView) findViewById(R.id.place_a))
+                .setText(selectedOrganizer.getLocation());
+        ((TextView) findViewById(R.id.fee_a))
+                .setText(selectedOrganizer.getFee());
+        ((TextView) findViewById(R.id.age_a))
+                .setText("Age: " + selectedOrganizer.getAge());
+        ((TextView) findViewById(R.id.details_a))
+                .setText(selectedOrganizer.getDescription());
+        ((ImageView) findViewById(R.id.displaypicture_a))
+                .setImageResource(selectedOrganizer.getImageResId());
+        ((ImageView) findViewById(R.id.portfoliopic1))
+                .setImageResource(selectedOrganizer.getPortfolioPic1ResId());
+        ((ImageView) findViewById(R.id.portfoliopic2))
+                .setImageResource(selectedOrganizer.getPortfolioPic2ResId());
+
+        // 3) Firestore‐backed ReviewAdapter
+        rv = findViewById(R.id.reviewsRecyclerView);
+        rv.setHasFixedSize(false);
+        rv.setLayoutManager(new GridLayoutManager(this, 1));
+        adapter = new ReviewAdapter(organizerId);
+        rv.setAdapter(adapter);
+
+        // 4) Launch AddReviewActivity with organizerId
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
+        ActivityResultLauncher<Intent> addReviewLauncher =
+                registerForActivityResult(
+                        new ActivityResultContracts.StartActivityForResult(),
+                        result -> {
+                            if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                                reviews newR = (reviews) result.getData()
+                                        .getSerializableExtra("review");
+                                adapter.addReviews(newR);
+                                rv.scrollToPosition(adapter.getItemCount() - 1);
+                            }
+                        }
+                );
+        fab.setOnClickListener(v -> {
+            Intent i = new Intent(this, AddReviewActivity.class);
+            i.putExtra("organizerId", organizerId);
+            addReviewLauncher.launch(i);
         });
 
-        // Retrieve the 'Organizer' object passed from the previous activity via Intent
-        // This will be used to populate the details on the new screen
-        Organizer selectedOrganizer = (Organizer) getIntent().getSerializableExtra("selectedOrganizer");
+        // 5) Message button (unchanged)
+        Button messageBtn = findViewById(R.id.btn_message);
+        messageBtn.setOnClickListener(v -> {
+            Intent chatIntent = new Intent(this, chat.class);
+            chatIntent.putExtra("selectedOrganizer", selectedOrganizer);
+            startActivity(chatIntent);
+        });
 
-        // Finding the views by their IDs from the XML layout
-        TextView nameText = findViewById(R.id.name_a);  // Organizer's name
-        TextView placeText = findViewById(R.id.place_a); // Organizer's location
-        TextView feeText = findViewById(R.id.fee_a);     // Organizer's hourly fee
-        TextView ageText = findViewById(R.id.age_a);     // Organizer's age
-        TextView detailsText = findViewById(R.id.details_a); // Description of the organizer
-        ImageView displayPic = findViewById(R.id.displaypicture_a); // Display picture of the organizer
-        ImageView portfolioPic1 = findViewById(R.id.portfoliopic1); // First portfolio picture
-        ImageView portfolioPic2 = findViewById(R.id.portfoliopic2); // Second portfolio picture
+        // 6) Home button: go back to MainActivity
+        ImageButton homeBtn = findViewById(R.id.homebutton2);
+        homeBtn.setOnClickListener(v -> {
+            // simply finish() to return to whatever launched this screen
+            finish();
 
-        // Setting the views with data retrieved from the selectedOrganizer object
-        nameText.setText(selectedOrganizer.getName()); // Display name
-        placeText.setText(selectedOrganizer.getLocation()); // Display location
-        feeText.setText(selectedOrganizer.getFee()); // Display fee
-        ageText.setText("Age: " + selectedOrganizer.getAge()); // Display age with a label
-        displayPic.setImageResource(selectedOrganizer.getImageResId()); // Display profile image
-        detailsText.setText(selectedOrganizer.getDescription()); // Display detailed description
-        portfolioPic1.setImageResource(selectedOrganizer.getPortfolioPic1ResId()); // Display first portfolio image
-        portfolioPic2.setImageResource(selectedOrganizer.getPortfolioPic2ResId()); // Display second portfolio image
+            // OR, to always start a fresh MainActivity, uncomment:
+            // Intent back = new Intent(Screen2_MoreInfo.this, MainActivity.class);
+            // startActivity(back);
+            // finish();
+        });
+    }
 
-        // Setting up a RecyclerView to display reviews related to the selected organizer
-        RecyclerView reviewsRecyclerView = findViewById(R.id.reviewsRecyclerView);
-        reviewsRecyclerView.setHasFixedSize(false); // Allow dynamic sizing of RecyclerView items
-
-        // Using a GridLayoutManager for the RecyclerView to display reviews in a grid format (1 column in this case)
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1);
-        reviewsRecyclerView.setLayoutManager(layoutManager);
-
-        // Setting up the adapter for the RecyclerView with the reviews data
-        // The reviews are fetched from the selectedOrganizer object
-        ReviewAdapter adapter = new ReviewAdapter();
-        reviewsRecyclerView.setAdapter(adapter); // Attaching the adapter to the RecyclerView
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (adapter != null) adapter.cleanup();  // stop Firestore listener
     }
 }

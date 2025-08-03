@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1028049242025",
+    "project_id": "orderlyhome-89a37",
+    "storage_bucket": "orderlyhome-89a37.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028049242025:android:abb44d602459deeb22e6b8",
+        "android_client_info": {
+          "package_name": "com.example.orderlyhome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028049242025-0124mguhaeqcbdfjcnb42i5h9jdq9iag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.orderlyhome",
+            "certificate_hash": "033cec2ee58e4bd4faf81c68cf1d6e0578bc3fb4"
+          }
+        },
+        {
+          "client_id": "1028049242025-7uq996pkkv86bulse3hn96m9i7rp9jee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIAMbPaiDcy47MXS-jDGSRTiRCjMaYLG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028049242025-7uq996pkkv86bulse3hn96m9i7rp9jee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

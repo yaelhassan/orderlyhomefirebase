@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F1F0">
+
+    <TextView
+        android:id="@+id/payment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="148dp"
+        android:text="Payment"
+        android:textColor="#d58f6b"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hours_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="180dp"
+        android:text="Hours:"
+        android:textColor="#d58f6b"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalpayment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:text="Total Payment:"
+        android:textColor="#d58f6b"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hours_title" />
+
+    <EditText
+        android:id="@+id/cardholdername_title"
+        android:layout_width="337dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="CARDHOLDER NAME"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payment_total" />
+
+    <EditText
+        android:id="@+id/month_title"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="MM"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardnumber_title" />
+
+    <EditText
+        android:id="@+id/year_title"
+        android:layout_width="98dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="YY"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintStart_toEndOf="@+id/month_title"
+        app:layout_constraintTop_toBottomOf="@+id/cardnumber_title" />
+
+    <EditText
+        android:id="@+id/cvv_title"
+        android:layout_width="94dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="CVV"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintStart_toEndOf="@+id/year_title"
+        app:layout_constraintTop_toBottomOf="@+id/cardnumber_title" />
+
+    <EditText
+        android:id="@+id/hours_from"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintEnd_toStartOf="@+id/dash"
+        app:layout_constraintStart_toEndOf="@+id/hours_title"
+        app:layout_constraintTop_toBottomOf="@+id/payment_title" />
+
+    <EditText
+        android:id="@+id/hours_to"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="82dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dash"
+        app:layout_constraintTop_toBottomOf="@+id/payment_title" />
+
+    <EditText
+        android:id="@+id/payment_total"
+        android:layout_width="177dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintStart_toEndOf="@+id/totalpayment_title"
+        app:layout_constraintTop_toBottomOf="@+id/hours_from" />
+
+    <EditText
+        android:id="@+id/cardnumber_title"
+        android:layout_width="336dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="CARDNUMBER"
+        android:inputType="text"
+        android:textColorHint="#D0BDB3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardholdername_title" />
+
+    <TextView
+        android:id="@+id/shekel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="NIS"
+        android:textColor="#6499A7"
+        app:layout_constraintStart_toEndOf="@+id/totalpayment_title"
+        app:layout_constraintTop_toBottomOf="@+id/hours_from" />
+
+    <ImageButton
+        android:id="@+id/backbuttonpayment"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="90dp"
+        android:backgroundTint="#F8F1F0"
+        android:scaleType="fitCenter"
+        app:tint="#d58f6b"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backarrow" />
+
+    <TextView
+        android:id="@+id/paynow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginBottom="116dp"
+        android:text="PAY NOW"
+        android:textColor="#6499A7"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="38dp"
+        android:text="-"
+        android:textColor="#6499A7"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/hours_from"
+        app:layout_constraintTop_toBottomOf="@+id/payment_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>

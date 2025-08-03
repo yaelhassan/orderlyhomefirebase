@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F1f0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        tools:ignore="ExtraText">
+
+        <!-- Title Row: Back Arrow + Title Side-by-Side -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/backbuttonbook"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:contentDescription="@string/back_arrow"
+                android:scaleType="fitCenter"
+                android:src="@drawable/backarrow"
+                app:tint="#D28850" />
+
+            <TextView
+                android:id="@+id/book_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text=""
+                android:textColor="#D28850"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="Book with Mayaan" />
+        </LinearLayout>
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/title_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/select_availability"
+            android:textColor="#9A7F66"
+            android:textSize="16sp" />
+
+        <!-- Days of the Week -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <TextView
+                android:id="@+id/sunday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_unavailable"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/sun"
+                android:textColor="#C0B8AF" />
+
+            <TextView
+                android:id="@+id/monday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_unavailable"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/mon"
+                android:textColor="#C0B8AF" />
+
+            <TextView
+                android:id="@+id/tuesday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_unavailable"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/tue"
+                android:textColor="#C0B8AF" />
+
+            <TextView
+                android:id="@+id/wednesday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_selected"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/wed"
+                android:textColor="#D28850" />
+
+            <TextView
+                android:id="@+id/thursday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_selected"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/thu"
+                android:textColor="#D28850" />
+
+            <TextView
+                android:id="@+id/friday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_selected"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/fri"
+                android:textColor="#D28850" />
+
+            <TextView
+                android:id="@+id/saturday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/day_unavailable"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/sat"
+                android:textColor="#C0B8AF" />
+        </LinearLayout>
+
+        <!-- Time Slots using Flexbox -->
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/timeSlotContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:alignItems="center"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                android:id="@+id/time1"
+                style="@style/TimeSlotButton"
+                android:text="09:00 AM" />
+
+            <TextView
+                android:id="@+id/time2"
+                style="@style/TimeSlotButton"
+                android:text="10:30 AM" />
+
+            <TextView
+                android:id="@+id/time3"
+                style="@style/TimeSlotButton"
+                android:text="12:00 PM" />
+
+            <TextView
+                android:id="@+id/time4"
+                style="@style/TimeSlotButton"
+                android:text="13:30 PM" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <!-- Continue Button -->
+        <TextView
+            android:id="@+id/continueButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@null"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="CONTINUE TO PAYMENT"
+            android:textColor="#6499A7"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

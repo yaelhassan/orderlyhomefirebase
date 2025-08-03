@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.orderlyhome">
+
+    <!-- Internet needed for Google Sign‑In, Firestore, etc. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Camera hardware & runtime permissions -->
+    <!-- android:required="false" means the app can still install on devices without a camera -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -10,23 +20,54 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OrderlyHome"
-        tools:targetApi="31">
+        android:theme="@style/Theme.OrderlyHome">
+
+        <!-- 1) Entry point: Google login -->
+        <activity
+            android:name=".loginwithGoogle"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 2) Main “swipe/tinder” screen -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <!-- 3) Detail screens -->
+        <activity
+            android:name=".AddReviewActivity"
+            android:exported="false" />
         <activity
             android:name=".EnlargedPortfolioActivity"
             android:exported="false" />
         <activity
             android:name=".Screen2_MoreInfo"
             android:exported="false" />
+
+        <!-- 4) Chat screen -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".chat"
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- 5) Booking screen -->
+        <activity
+            android:name=".book"
+            android:exported="false" />
+
+        <!-- 6) Payment screen -->
+        <activity
+            android:name=".Payment"
+            android:exported="false" />
+
+        <!-- 7) Camera capture screen -->
+        <activity
+            android:name=".takephoto"
+            android:exported="false" />
+
+
     </application>
-
 </manifest>

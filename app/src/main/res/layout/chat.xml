@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatmain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F1F0">
+
+    <ImageButton
+        android:id="@+id/backbuttonchat"
+        android:layout_width="42dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="55dp"
+        android:background="@null"
+        android:contentDescription="@string/back_arrow"
+        android:scaleType="fitCenter"
+        android:src="@drawable/backarrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name3"
+        app:tint="#D28850" />
+
+    <ImageButton
+        android:id="@+id/menu4"
+        android:layout_width="71dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="menu barr button"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu"
+        app:tint="#6499a7" />
+
+    <ImageButton
+        android:id="@+id/homebutton3"
+        android:layout_width="85dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="home screen button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/home"
+        app:tint="#6499a7" />
+
+    <ImageButton
+        android:id="@+id/chat3"
+        android:layout_width="57dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="chat button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/chat"
+        app:tint="#6499a7" />
+
+    <ImageButton
+        android:id="@+id/profile3"
+        android:layout_width="63dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#F8F1F0"
+        android:contentDescription="profile button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homebutton3"
+        app:layout_constraintStart_toEndOf="@+id/chat3"
+        app:srcCompat="@drawable/profile"
+        app:tint="#6499a7" />
+
+    <TextView
+        android:id="@+id/app_name3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="cursive"
+        android:text="Orderly Home"
+        android:textColor="#6499A7"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="10dp"
+        android:text="Maayan Levy"
+        android:textColor="#D58F6B"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/book_btn"
+        app:layout_constraintTop_toBottomOf="@+id/app_name3" />
+
+    <Button
+        android:id="@+id/book_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#D58F6B"
+        android:text="Book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu4" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="96dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/name_chat"
+        app:layout_constraintTop_toBottomOf="@+id/app_name3"
+        app:srcCompat="@drawable/maayanimage" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messagesRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@id/et_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+
+
+    <EditText
+        android:id="@+id/et_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Text Message"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/profile3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/camera"
+        android:layout_width="69dp"
+        android:layout_height="67dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="#F8F1F0"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/homebutton3"
+        app:layout_constraintEnd_toStartOf="@+id/send"
+        app:srcCompat="@drawable/cameralogo"
+        app:tint="#6499A7" />
+
+    <ImageButton
+        android:id="@+id/send"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="30dp"
+        android:background="#F8F1F0"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/homebutton3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/sendlogo"
+        app:tint="#6499A7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
